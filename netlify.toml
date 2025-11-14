@@ -1,3 +1,10 @@
 [build]
-  command = "ng build --configuration production"
-  publish = "dist/password-generator/browser"
+  # Commande de build Angular pour la production
+  command = "npm install && ng build --configuration production"
+  
+  # Dossier de publication après build
+  publish = "dist/password-generator"
+
+# Optionnel : préciser que c'est un site statique (évite l'utilisation du plugin)
+[build.environment]
+  NETLIFY_USE_ANGULAR_RUNTIME = "false"
